@@ -18,7 +18,7 @@ from pinecone import Pinecone
 if os.getenv("RAILWAY_ENVIRONMENT"):
     # Railway (production)
     openai.api_key = os.getenv("OPENAPIKEY")
-    pineconeKey = os.getenv['PINECONE']
+    pineconeKey = os.getenv('PINECONE')
     
     
 else:
@@ -35,7 +35,7 @@ index_name = "interests"
 index = pc.Index(index_name)
 
 # ---- FastAPI app ----
-app = FastAPI(title="Meta Interest Streamer API", version="2.0.0")
+app = FastAPI(title="Meta Semantic Interest Streamer API", version="2.0.0")
 
 
 # ---- Middleware: block direct Railway calls ----
