@@ -1,0 +1,41 @@
+# --- Environment & Secrets ---
+.env
+*.env
+.env.*
+.envrc
+
+# --- Python ---
+__pycache__/
+*.py[cod]
+*.so
+*.egg
+*.egg-info/
+dist/
+build/
+.eggs/
+pip-wheel-metadata/
+
+# --- IDE / OS ---
+.DS_Store
+.vscode/
+.idea/
+*.swp
+
+# --- Virtual Environments ---
+venv/
+env/
+.venv/
+
+# --- Logs & Temporary ---
+*.log
+*.out
+*.tmp
+*.bak
+*.sqlite3
+
+# --- Jupyter / Notebooks ---
+.ipynb_checkpoints/
+
+# --- Railway / Deployment ---
+*.db
+*.pid
