@@ -1,0 +1,9 @@
+fastapi
+uvicorn
+sqlalchemy
+pymysql
+pandas
+python-dotenv
+openai
+pinecone
+pinecone-client
