@@ -17,7 +17,7 @@ from pinecone import Pinecone
 # ---- Load environment variables ----
 if os.getenv("RAILWAY_ENVIRONMENT"):
     # Railway (production)
-    openai.api_key = os.getenv("OPENAPIKEY")
+    openai.api_key = os.getenv("OPENAIKEY")
     pineconeKey = os.getenv('PINECONE')
     print('RAILWAY_ENVIRONMENT')
     print("RAILWAY_ENVIRONMENT detected ✅")
