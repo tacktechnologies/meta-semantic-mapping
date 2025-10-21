@@ -20,6 +20,9 @@ if os.getenv("RAILWAY_ENVIRONMENT"):
     openai.api_key = os.getenv("OPENAPIKEY")
     pineconeKey = os.getenv('PINECONE')
     print('RAILWAY_ENVIRONMENT')
+    print("RAILWAY_ENVIRONMENT detected ✅")
+    print("OPENAI:", bool(openai.api_key))
+    print("PINECONE:", os.getenv("PINECONE"))
     
 else:
     # Local dev
