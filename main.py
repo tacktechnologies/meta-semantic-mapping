@@ -46,7 +46,13 @@ app = FastAPI(title="Meta Semantic Interest Streamer API", version="2.0.0")
 async def block_direct_railway(request: Request, call_next):
     app_env = os.getenv("APP_ENV", "development")
     host = request.headers.get("host", "")
+    rapidapi_host = request.headers.get("x-rapidapi-proxy-secret") or request.headers.get("x-rapidapi-user")
 
+    # Allow RapidAPI proxy traffic
+    if rapidapi_host:
+        return await call_next(request)
+
+    # Block direct Railway access in production
     if app_env == "production" and "up.railway.app" in host:
         return JSONResponse(
             status_code=403,
@@ -59,6 +65,7 @@ async def block_direct_railway(request: Request, call_next):
         )
 
     return await call_next(request)
+
 
 
 # ---- Semantic Search Function ----
